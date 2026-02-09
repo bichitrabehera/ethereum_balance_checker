@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Open_Sans, Geist_Mono } from "next/font/google";
 
 export const metadata: Metadata = {
   title: {
@@ -31,14 +32,24 @@ export const metadata: Metadata = {
   ],
 };
 
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-open-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-black">
-      <body className="min-h-screen bg-black text-white ">
+    <html lang="en" className={`bg-black ${openSans.variable}`}>
+      <body className="min-h-screen bg-black text-white font-sans">
         {children}
       </body>
     </html>

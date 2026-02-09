@@ -16,14 +16,14 @@ export default function WalletCard({
   const copyAddress = () => navigator.clipboard.writeText(acc);
 
   return (
-    <section className="rounded-xl bg-white border p-8 space-y-6">
+    <section className="px-6 py-6 space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-black">Wallet</h2>
+        <h2 className="text-lg font-semibold text-white">Wallet</h2>
 
         {acc && (
           <button
             onClick={refresh}
-            className="inline-flex items-center gap-2 text-lg text-blue-600 hover:text-blue-800"
+            className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800"
           >
             <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
             Refresh balance
@@ -32,7 +32,7 @@ export default function WalletCard({
       </div>
 
       {!acc && (
-        <p className="text-sm text-gray-500">
+        <p className="text-lg text-white">
           Connect your wallet to view address and balance.
         </p>
       )}
@@ -40,15 +40,15 @@ export default function WalletCard({
       {acc && (
         <>
           <div>
-            <p className="text-sm text-gray-500 mb-2">Address</p>
+            <p className="text-sm text-white mb-2">Address</p>
             <div className="flex items-center gap-2">
-              <div className="flex-1 rounded-lg text-black border-gray-600 px-4 py-2 font-mono text-sm break-all">
+              <div className="flex-1 text-white border-[#ffffff20] border px-4 py-2 text-sm break-all">
                 {acc}
               </div>
 
               <button
                 onClick={copyAddress}
-                className="p-2 rounded-lg border bg-blue-600 hover:bg-blue-500"
+                className="p-2  border border-[#ffffff20] bg-blue-600 hover:bg-blue-500"
               >
                 <Copy className="w-4 h-4" />
               </button>
@@ -56,7 +56,7 @@ export default function WalletCard({
               <a
                 href={`https://sepolia.etherscan.io/address/${acc}`}
                 target="_blank"
-                className="p-2 rounded-lg border bg-blue-600 hover:bg-blue-500"
+                className="p-2 border border-[#ffffff20] bg-blue-600 hover:bg-blue-500"
               >
                 <ExternalLink className="w-4 h-4" />
               </a>
@@ -70,7 +70,6 @@ export default function WalletCard({
               <span className="text-lg text-gray-500">ETH</span>
             </p>
           </div>
-        
         </>
       )}
     </section>

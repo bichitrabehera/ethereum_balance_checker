@@ -12,9 +12,9 @@ const accentMap = {
 };
 
 const textMap = {
-  blue: "text-blue-600",
-  green: "text-green-600",
-  red: "text-red-600",
+  blue: "text-blue-400",
+  green: "text-green-400",
+  red: "text-red-400",
 };
 
 export default function StatCard({
@@ -24,25 +24,16 @@ export default function StatCard({
   color = "blue",
 }: StatCardProps) {
   return (
-    <div
-      className="relative rounded-2xl border bg-gray-50 p-5
-                 hover:bg-white hover:shadow-sm
-                 transition"
-    >
-      {/* Accent bar */}
-      <span
-        className={`absolute top-0 left-0 h-full w-1 rounded-l-2xl ${accentMap[color]}`}
-      />
-
-      <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
+    <div className="relative bg-black px-5 py-4">
+      <p className="text-[11px] uppercase tracking-widest text-gray-500">
         {label}
       </p>
 
-      <p className={`mt-2 text-2xl font-mono font-semibold ${textMap[color]}`}>
+      <p className={`mt-1 text-2xl font-mono font-medium ${textMap[color]}`}>
         {value}
       </p>
 
-      {hint && <p className="mt-2 text-xs text-gray-400">{hint}</p>}
+      {hint && <p className="mt-1 text-xs text-gray-500">{hint}</p>}
     </div>
   );
 }

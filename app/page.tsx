@@ -78,19 +78,17 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black">
       <Header acc={acc} connectWallet={connectWallet} />
 
       <div className="max-w-7xl mx-auto px-6 py-8 space-y-8">
         {/* Network Overview */}
-        <section className="bg-white rounded-2xl border shadow-sm">
-          <div className="flex items-center justify-between px-6 py-4 border-b">
-            <h2 className="text-base font-semibold text-gray-900">
-              Network Overview
-            </h2>
+        <section className="border border-[#ffffff20]">
+          <div className="flex items-center justify-between px-6 py-4">
+            <h2 className=" font-semibold text-white">Network Overview</h2>
             <button
               onClick={getNetworkInfo}
-              className="text-sm font-medium text-blue-600 hover:text-blue-700"
+              className="text-sm bg-blue-700 p-2 font-medium hover:bg-blue-600"
             >
               Refresh
             </button>
@@ -101,10 +99,8 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Main Dashboard */}
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Wallet */}
-          <div className="lg:col-span-2 bg-white rounded-2xl border shadow-sm p-6">
+          <div className="lg:col-span-2 border border-[#ffffff20]">
             <WalletCard
               acc={acc}
               balance={balance}
@@ -113,16 +109,11 @@ export default function Page() {
             />
           </div>
 
-          {/* Gas */}
-          <div className="bg-white rounded-2xl border shadow-sm p-6">
-            <GasPrice />
-          </div>
+          <GasPrice />
         </section>
 
-        {/* Footer */}
-        <Footer refresh={getNetworkInfo} />
+        {/* <Footer refresh={getNetworkInfo} /> */}
       </div>
     </div>
   );
-
 }

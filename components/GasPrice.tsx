@@ -22,16 +22,16 @@ const GasPrice = () => {
 
   useEffect(() => {
     fetchGasPrice();
-  },[]);
+  }, []);
 
   return (
-    <div className="rounded-2xl bg-white border shadow-sm p-6 w-full max-w-sm">
+    <div className="shadow-sm p-6 w-full max-w-sm border border-[#ffffff20]">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <div className="p-2 rounded-lg bg-orange-100 text-orange-600">
+          <div className="p-2 rounded-lg bg-orange-700 text-orange-100">
             <Fuel className="w-4 h-4" />
           </div>
-          <h3 className="text-sm font-medium text-gray-700">Gas Price</h3>
+          <h3 className="text-sm font-medium text-white">Gas Price</h3>
         </div>
 
         <button
@@ -46,11 +46,11 @@ const GasPrice = () => {
       </div>
 
       <div>
-        <p className="text-3xl font-semibold text-gray-900">
+        <p className="text-3xl mt-12 font-semibold text-white">
           {loading ? "…" : gasPrice || "--"}
-          <span className="text-lg text-gray-500 ml-1">gwei</span>
+          <span className="text-lg text-gray-500 ml-1">{"  "}gwei</span>
         </p>
-        <p className="text-xs text-gray-400 mt-1">Current average gas price</p>
+        <p className="text-sm text-gray-400 mt-1">Current average gas price</p>
       </div>
     </div>
   );
